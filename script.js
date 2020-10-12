@@ -35,14 +35,12 @@ const populateUI = () => {
 	const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
 
 	// Nested if statement necessary because using && triggers error when selectedSeats.length is null
-	if (selectedSeats.length !== null) {
-		if (selectedSeats.length > 0) {
-			seats.forEach((seat, index) => {
-				if (selectedSeats.indexOf(index) > -1) {
-					seat.classList.add("selected");
-				}
-			});
-		}
+	if (selectedSeats !== null) {
+		seats.forEach((seat, index) => {
+			if (selectedSeats.indexOf(index) > -1) {
+				seat.classList.add("selected");
+			}
+		});
 	}
 
 	const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");

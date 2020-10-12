@@ -24,3 +24,9 @@ A learning project using the DOM and local storage to create a movie booking app
 ## Planned Features
 
 - Dummy success action on submit
+- Color and style tweaks
+- Separate price from movie
+
+## Moonshot features
+
+- Link to movie API
