@@ -27,9 +27,32 @@ const updateSelectedCount = () => {
 	});
 
 	localStorage.setItem("selectedSeats", JSON.stringify(seatIndexes));
-
-	console.log(seatIndexes);
 };
+
+// Populate UI with info from local storage
+
+const populateUI = () => {
+	const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+
+	if (selectedSeats.length !== null && selectedSeats.length > 0) {
+		seats.forEach((seat, index) => {
+			if (selectedSeats.indexOf(index) > -1) {
+				seat.classList.add("selected");
+			}
+		});
+	}
+
+	const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
+
+	if (selectedMovieIndex !== null) {
+		movieSelect.selectedIndex = selectedMovieIndex;
+	}
+
+	// Set initial count and total
+	updateSelectedCount();
+};
+
+populateUI();
 
 const handleClick = (event) => {
 	if (
