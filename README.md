@@ -1,4 +1,4 @@
-# Simple Form with Validation
+# Movie Seat Booking App
 
 A learning project using the DOM and local storage to create a movie booking app frontend.
 
